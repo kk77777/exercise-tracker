@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
-const Schema = mongoos.Schema;
+const Schema = mongoose.Schema;
 
 const exerciseSchema = new Schema(
   {
     username: { type: String, required: true },
     description: { type: String, required: true },
-    duaration: { type: Number, required: true },
-    data: { type: Data, required: true }
+    duration: { type: Number, required: true },
+    date: { type: Date, required: true }
   },
   {
-    timestamp: true
+    timestamps: true
   }
 );
 

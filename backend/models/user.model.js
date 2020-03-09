@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoos.Schema;
+const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
@@ -12,7 +12,7 @@ const userSchema = new Schema(
     }
   },
   {
-    timestamp: true
+    timestamps: true
   }
 );
 
