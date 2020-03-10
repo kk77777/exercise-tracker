@@ -9,7 +9,14 @@ const Exercise = props => (
     <td>{props.exercise.duration}</td>
     <td>{props.exercise.date.substring(0, 10)}</td>
     <td>
-      <Link to={'/edit/' + props.exercise._id}>edit</Link> |
+      <Link
+        to={
+          'https://lit-plateau-62749.herokuapp.com/edit/' + props.exercise._id
+        }
+      >
+        edit
+      </Link>{' '}
+      |
       <a href='/#' onClick={() => props.deleteExercise(props.exercise._id)}>
         delete
       </a>
@@ -26,7 +33,7 @@ export default class ExercisesList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/exercises/')
+      .get('https://lit-plateau-62749.herokuapp.com/exercises/')
       .then(res => {
         this.setState({ exercises: res.data });
       })
@@ -37,7 +44,7 @@ export default class ExercisesList extends Component {
 
   deleteExercise(id) {
     axios
-      .delete('http://localhost:5000/exercises/' + id)
+      .delete('https://lit-plateau-62749.herokuapp.com/exercises/' + id)
       .then(res => console.log(res.data));
 
     this.setState({
