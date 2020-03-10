@@ -37,7 +37,7 @@ export default class EditExercise extends Component {
         console.log(err);
       });
 
-    axios.get('https://lit-plateau-62749.herokuapp.com/users/').then(res => {
+    axios.get('/users').then(res => {
       if (res.data.length > 0) {
         this.setState({
           users: res.data.map(user => user.username)
@@ -78,11 +78,7 @@ export default class EditExercise extends Component {
     console.log(exercise);
 
     axios
-      .post(
-        'https://lit-plateau-62749.herokuapp.com/exercises/update/' +
-          this.props.match.params.id,
-        exercise
-      )
+      .post('/exercises/update/' + this.props.match.params.id, exercise)
       .then(res => console.log(res.data));
 
     window.location = '/';

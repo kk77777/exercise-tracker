@@ -26,9 +26,7 @@ export default class CreateExercise extends Component {
     };
     console.log(user);
 
-    axios
-      .post('https://lit-plateau-62749.herokuapp.com/users/add', user)
-      .then(res => console.log(res.data));
+    axios.post('/users/add', user).then(res => console.log(res.data));
 
     this.setState({
       username: ''
